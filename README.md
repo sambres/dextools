@@ -7,3 +7,12 @@ Some tools for vscode
 ### Convert doc to json
 
 Set the active document language to json, and formats it
+
+## Pacakaging
+
+You can use vsce to [easily package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions) and publish your extensions:
+
+```
+$ yarn global add vsce
+$ vsce package
+```

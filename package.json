@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.56.0"
   },
+  "icon": "images/male_cook.png",
   "publisher": "asambres",
   "repository": {
     "type": "git",
