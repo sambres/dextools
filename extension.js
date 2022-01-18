@@ -11,10 +11,11 @@ function activate(context) {
       vscode.languages.setTextDocumentLanguage(
         vscode.window.activeTextEditor.document,
         "json"
-      );
+      ).then(() => {
+        // format the active document
+        vscode.commands.executeCommand("editor.action.formatDocument");
+      });
 
-      // format the active document
-      vscode.commands.executeCommand("editor.action.formatDocument");
     }
   );
 
