@@ -8,7 +8,7 @@ Some tools for vscode
 
 Set the active document language to json, and formats it
 
-## Pacakaging
+## Packaging
 
 You can use vsce to [easily package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions) and publish your extensions:
 
