@@ -2,7 +2,7 @@
   "name": "dextools",
   "displayName": "dextools",
   "description": "Tools for vscode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -16,32 +16,50 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:dextools.convert_doc_to_json"
+    "onCommand:dextools.convert_doc_to_json",
+    "onCommand:dextools.convert_logs_to_json"
   ],
-  "main": "./extension.js",
+  "main": "./out/extension",
   "contributes": {
     "commands": [
       {
         "command": "dextools.convert_doc_to_json",
         "title": "Convert document to JSON",
         "description": "Change language mode to JSON and format document"
+      },
+      {
+        "command": "dextools.convert_logs_to_json",
+        "title": "Convert logs to JSON",
+        "description": "Converts log lines to JSON and format document"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "dextools.convert_doc_to_json",
+        "key": "ctrl+j ctrl+s",
+        "mac": "cmd+j cmd+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "dextools.convert_logs_to_json",
+        "key": "ctrl+j ctrl+l",
+        "mac": "cmd+j cmd+l",
+        "when": "editorTextFocus"
       }
     ]
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "yarn run lint",
-    "test": "node ./test/runTest.js"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/vscode": "^1.56.0",
-    "@types/glob": "^7.1.3",
-    "@types/mocha": "^8.0.4",
-    "@types/node": "^12.11.7",
-    "eslint": "^7.19.0",
-    "glob": "^7.1.6",
-    "mocha": "^8.2.1",
-    "typescript": "^4.1.3",
-    "vscode-test": "^1.5.0"
+    "@types/node": "^12.12.0",
+    "@types/vscode": "^1.32.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.0",
+    "@typescript-eslint/parser": "^4.16.0",
+    "eslint": "^7.21.0",
+    "typescript": "^4.4.3"
   }
 }

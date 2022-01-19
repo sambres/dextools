@@ -16,3 +16,9 @@ You can use vsce to [easily package](https://code.visualstudio.com/api/working-w
 $ yarn global add vsce
 $ vsce package
 ```
+
+### How to use
+
+ - Open in vscode
+ - Run with F5
+ - try the 2 commands on the test files
